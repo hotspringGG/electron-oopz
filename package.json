@@ -1,7 +1,7 @@
 {
-  "name": "KOOK",
+  "name": "oopz",
   "version": "1.5.9",
-  "description": "A minimal Electron application",
+  "description": "Oopz Electron client",
   "homepage": "https://github.com/hotspringGG/",
   "main": "src/main.js",
   "scripts": {
@@ -19,11 +19,10 @@
     "app:dir": "electron-builder --dir",
     "app:dist": "electron-builder"
   },
-  "repository": "github:hotspringGG/electron-kook",
+  "repository": "github:hotspringGG/electron-oopz",
   "keywords": [
     "Electron",
-    "kook",
-    "开黑啦"
+    "oopz"
   ],
   "author": {
     "name": "ph4nt0mer",
@@ -31,11 +30,11 @@
   },
   "license": "MIT",
   "build": {
-    "productName": "KOOK",
-    "appId": "HotspringDev.electron.kook",
-    "copyright": "KOOK",
+    "productName": "Oopz",
+    "appId": "HotspringDev.electron.oopz",
+    "copyright": "Oopz",
     "mac": {
-      "icon": "static/icon.icns",
+      "icon": "static/image.png",
       "hardenedRuntime": true,
       "entitlements": "entitlements.mac.plist",
       "extendInfo": {
@@ -47,15 +46,15 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "./build/icons/icon.icns"
+        "icon": "./build/icons/image.png"
       },
       "publishers": [
         {
-          "name": "@rootphantomer/KOOK",
+          "name": "@hotspringGG/electron-oopz",
           "config": {
             "repository": {
-              "owner": "rootphantomer",
-              "name": "electron-kook"
+              "owner": "hotspringGG",
+              "name": "electron-oopz"
             },
             "prerelease": false,
             "draft": true
@@ -66,22 +65,22 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "KOOK",
-            "title": "KOOK",
+            "name": "Oopz",
+            "title": "Oopz",
             "authors": "HotspringDev",
-            "exe": "KOOK.exe"
+            "exe": "Oopz.exe"
           }
         },
         {
           "name": "@electron-forge/maker-zip",
           "config": {
-            "name": "KOOK"
+            "name": "Oopz"
           }
         },
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "name": "KOOK",
+            "name": "Oopz",
             "options": {
               "maintainer": "HotspringDev",
               "categories": [
@@ -93,11 +92,11 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {
-            "name": "KOOK",
+            "name": "Oopz",
             "options": {
               "maintainer": "HotspringDev",
               "homepage": "https://github.com/hotspringGG/",
-              "icon": "static/favicon.ico",
+              "icon": "static/image.png",
               "categories": [
                 "Utility"
               ]
