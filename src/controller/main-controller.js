@@ -147,7 +147,7 @@ class MainController {
 
   changeTitle() {
     this.window.webContents.executeJavaScript(`
-            var titleName = 'Kook (version: ${app.getVersion()})';
+            var titleName = 'Oopz (version: ${app.getVersion()})';
             document.title = titleName;
             new MutationObserver(mutations => {
                 if (document.title !== titleName) {
