@@ -46,7 +46,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "./build/icons/image.png"
+        "icon": "./static/image.png"
       },
       "publishers": [
         {
