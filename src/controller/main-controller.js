@@ -15,7 +15,7 @@ class MainController {
       frame: true,
       autoHideMenuBar: true,
       resizable: true,
-      icon: path.join(__dirname, "./static/favicon.ico"),
+      //icon: path.join(__dirname, "./static/favicon.ico"),
       webPreferences: {
         preload: path.join(__dirname, "./src/controller/preload.js"),
         webSecurity: false,
@@ -27,7 +27,7 @@ class MainController {
     // 是否打开开发工具
     // this.window.webContents.openDevTools();
 
-    this.window.loadURL("https://www.kookapp.cn/app/login", {
+    this.window.loadURL("https://web.oopz.cn/#/login", {
       userAgent:
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.52",
     });
