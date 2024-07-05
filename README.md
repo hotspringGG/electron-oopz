@@ -1,8 +1,6 @@
-# electron-kook
-## Forked from https://github.com/rootphantomer/electron-kook
+# electron-oopz
 ## Fixed by hotspringGG(HotspringDev)
-利用electron技术封装了kook-web的mac下软件。
-
+### 下载: 本仓库Actions
 编译
 
 ```bash
