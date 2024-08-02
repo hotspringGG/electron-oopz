@@ -84,3 +84,32 @@ jobs:
         with:
           name: electron-app-linux
           path: out/make # Adjust this path to the output directory for Linux builds
+
+  build-archlinux:
+    name: Build Electron App for Arch Linux
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker for Arch Linux
+        run: |
+          docker pull archlinux:latest
+          docker run --name archlinux-container -d archlinux:latest
+
+      - name: Install dependencies and build app
+        run: |
+          docker exec -it archlinux-container /bin/bash -c "
+          pacman -Syu --noconfirm &&
+          pacman -S --noconfirm base-devel nodejs npm &&
+          npm install &&
+          npm run make &&
+          tar -cvJf electron-app-archlinux.tar.zst out/make
+          "
+
+      - name: Archive Arch Linux artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: electron-app-archlinux
+          path: electron-app-archlinux.tar.zst
