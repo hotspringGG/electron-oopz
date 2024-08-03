@@ -15,7 +15,7 @@ class MainController {
       frame: true,
       autoHideMenuBar: true,
       resizable: true,
-      icon: path.join(__dirname, "./static/image.png"),
+      icon: path.join(__dirname, "./static/favicon.ico"),
       webPreferences: {
         preload: path.join(__dirname, "./src/controller/preload.js"),
         webSecurity: false,

@@ -43,7 +43,7 @@
       ]
     },
     "linux": {
-      "icon": "static/favicon.ico",
+      "icon": "static/",
       "target": [
         "AppImage",
         "deb",
@@ -51,7 +51,7 @@
         "pacman"
       ],
       "category": "Utility"
-    }
+    },
   },
   "browserslist": {
     "production": [
