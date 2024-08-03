@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-windows
-          path: dist/windows/**/*
+          path: dist/**/*exe
 
       - name: Upload build artifacts
         if: success()
@@ -56,8 +56,8 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: electron-build-linux
-          path: dist/linux/**/*
+          name: electron-build
+          path: dist/**/*
 
       - name: Upload build artifacts
         if: success()
@@ -71,11 +71,18 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-linux-deb
-          path: dist/linux/**/*AppImage
+          path: dist/**/*AppImage
 
       - name: Upload build artifacts
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-macos
-          path: dist/macos/**/*
+          path: dists/**/*dmg
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-macos
+          path: dists/**/*pacman
