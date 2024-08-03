@@ -70,7 +70,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: electron-build-linux-deb
+          name: electron-build-linux-AppImage
           path: dist/**/*AppImage
 
       - name: Upload build artifacts
@@ -78,11 +78,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-macos
-          path: dists/**/*dmg
+          path: dist/**/*dmg
 
       - name: Upload build artifacts
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-pacman
-          path: dists/**/*pacman
+          path: dist/**/*pacman
