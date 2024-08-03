@@ -38,11 +38,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
-      # - name: Upload build artifacts
-      #   if: success()
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: electron-build-artifacts
-      #     path: |
-      #       dist/**/*
-      #       # Adjust paths according to your build output location
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-artifacts
+          path: |
+            dist/**/*
+            # Adjust paths according to your build output location
