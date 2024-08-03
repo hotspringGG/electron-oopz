@@ -28,7 +28,6 @@ jobs:
           sudo gem install fpm
           sudo apt install zstd
           sudo apt-get install --no-install-recommends -y libarchive-tools
-          electron-builder install-app-deps
 
       - name: Install dependencies
         run: npm install
