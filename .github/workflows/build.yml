@@ -42,7 +42,40 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: electron-build-artifacts
-          path: |
-            dist/**/*
-            # Adjust paths according to your build output location
+          name: electron-build-windows
+          path: dist/windows/**/*
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-linux-deb
+          path: dist/linux/**/*deb
+          
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-linux
+          path: dist/linux/**/*
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-linux-rpm
+          path: dist/linux/**/*rpm
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-linux-deb
+          path: dist/linux/**/*AppImage
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-build-macos
+          path: dist/macos/**/*
