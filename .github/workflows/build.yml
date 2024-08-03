@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-linux-deb
-          path: dist/linux/**/*deb
+          path: dist/**/*deb
           
       - name: Upload build artifacts
         if: success()
@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-build-linux-rpm
-          path: dist/linux/**/*rpm
+          path: dist/**/*rpm
 
       - name: Upload build artifacts
         if: success()
