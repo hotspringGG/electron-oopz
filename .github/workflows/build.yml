@@ -20,7 +20,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install required tools
+      - name: Install required tools (Linux only)
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y ruby ruby-dev build-essential
