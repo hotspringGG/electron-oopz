@@ -1,85 +1,32 @@
 name: Build/release
 
-on: push
+on: 
+  workflow_dispatch:
 
 jobs:
-  build-windows:
-    name: Build Electron App for Windows
-    runs-on: windows-latest
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Check out Git repository
+        uses: actions/checkout@v1
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
         with:
-          node-version: '18' # Change this to Node.js 18
+          node-version: 10
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Electron app for Windows
-        run: npm run make
-
-      - name: Archive Windows artifact
-        uses: actions/upload-artifact@v2
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
         with:
-          name: electron-app-windows
-          path: out/make # Adjust this path to the output directory for Windows builds
+          # GitHub token, automatically provided to the action
+          # (No need to define this secret in the repo settings)
+          github_token: ${{ secrets.github_token }}
 
-  build-macos:
-    name: Build Electron App for macOS
-    runs-on: macos-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18' # Change this to Node.js 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Set macOS environment variables
-        run: |
-          export npm_config_runtime=electron
-          export npm_config_target=12.0.0 # Change this to your Electron version (if needed)
-          export npm_config_arch=x64
-
-      - name: Build Electron app for macOS
-        run: npm run make
-
-      - name: Archive macOS artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: electron-app-macos
-          path: out/make # Adjust this path to the output directory for macOS builds
-
-  build-linux:
-    name: Build Electron App for Linux
-    runs-on: ubuntu-20.04
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18' # Change this to Node.js 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Electron app for Linux
-        run: npm run make
-
-      - name: Archive Linux artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: electron-app-linux
-          path: out/make # Adjust this path to the output directory for Linux builds
+          # If the commit is tagged with a version (e.g. "v1.0.0"),
+          # release the app after building
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
