@@ -51,7 +51,6 @@
         "pacman"
       ],
       "category": "Utility",
-      "publish": "always"
     }
   },
   "browserslist": {
