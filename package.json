@@ -50,7 +50,8 @@
         "rpm",
         "pacman"
       ],
-      "category": "Utility"
+      "category": "Utility",
+      "publish": "always"
     }
   },
   "browserslist": {
