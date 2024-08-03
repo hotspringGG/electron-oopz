@@ -27,7 +27,7 @@ jobs:
           sudo apt-get install -y ruby ruby-dev build-essential
           sudo gem install fpm
           sudo apt install zstd
-          sudo apt-get install --no-install-recommends -y bsdtar
+          sudo apt-get install --no-install-recommends -y libarchive-tools
           electron-builder install-app-deps
 
       - name: Install dependencies
@@ -38,7 +38,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-          publish: always
 
       # - name: Upload build artifacts
       #   if: success()
