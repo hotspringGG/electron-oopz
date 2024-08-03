@@ -27,6 +27,8 @@ jobs:
           sudo apt-get install -y ruby ruby-dev build-essential
           sudo gem install fpm
           sudo apt install zstd
+          sudo apt-get install --no-install-recommends -y bsdtar
+          electron-builder install-app-deps
 
       - name: Install dependencies
         run: npm install
