@@ -28,7 +28,7 @@
     "appId": "HotspringDev.electron.oopz",
     "copyright": "Oopz",
     "mac": {
-      "icon": "static/image.png",
+      "icon": "static/favicon.ico",
       "hardenedRuntime": true,
       "entitlements": "entitlements.mac.plist",
       "extendInfo": {
@@ -37,13 +37,13 @@
       }
     },
     "win": {
-      "icon": "static/image.png",
+      "icon": "static/favicon.ico",
       "target": [
         "nsis"
       ]
     },
     "linux": {
-      "icon": "static/image.png",
+      "icon": "static/favicon.ico",
       "target": [
         "AppImage",
         "deb",
