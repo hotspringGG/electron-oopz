@@ -20,6 +20,13 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install required tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby ruby-dev build-essential
+          sudo gem install fpm
+          sudo apt-get install -y bsdtar
+
       - name: Install dependencies
         run: npm install
 
