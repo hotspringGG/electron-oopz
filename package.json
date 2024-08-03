@@ -6,14 +6,12 @@
   "main": "src/main.js",
   "scripts": {
     "pack": "electron-builder --dir",
-    "dist:linux": "electron-builder --linux AppImage",
+    "dist:linux": "electron-builder --linux",
     "dist:macOS": "electron-builder --mac",
     "dist:win": "electron-builder --win",
-    "release": "electron-builder --mac --windows --linux AppImage --publish always",
+    "release": "electron-builder --mac --windows --linux --publish always",
     "electron": "electron",
-    "build-all": "electron-builder",
-    "app:dir": "electron-builder --dir",
-    "app:dist": "electron-builder"
+    "build": "electron-builder"
   },
   "repository": "github:hotspringGG/electron-oopz",
   "keywords": [
@@ -21,8 +19,8 @@
     "oopz"
   ],
   "author": {
-    "name": "ph4nt0mer",
-    "email": "root@ph4nt0mer.xyz"
+    "name": "HotspringDev",
+    "email": "hotspring@requan.top"
   },
   "license": "MIT",
   "build": {
@@ -37,6 +35,22 @@
         "NSMicrophoneUsageDescription": "授权访问麦克风",
         "NSCameraUsageDescription": "授权访问摄像头"
       }
+    },
+    "win": {
+      "icon": "static/image.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "icon": "static/image.png",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "pacman"
+      ],
+      "category": "Utility"
     }
   },
   "browserslist": {
