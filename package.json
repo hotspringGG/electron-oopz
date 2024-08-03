@@ -43,7 +43,7 @@
       ]
     },
     "linux": {
-      "icon": "static/favicon.png",
+      "icon": "static/",
       "target": [
         "AppImage",
         "deb",
